@@ -3,8 +3,8 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = '0.0.0.0';
+const port = process.env.PORT || 10000;
 
 app.use(express.json());
 
