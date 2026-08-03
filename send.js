@@ -6,7 +6,7 @@ const dataToSend = {
 };
 
 function send(){
-    fetch('https://onrender.com', {
+    fetch('https://indexsite.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
