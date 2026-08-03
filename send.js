@@ -6,7 +6,7 @@ const dataToSend = {
 };
 
 function send(){
-    fetch('http://localhost:3000/api/data', {
+    fetch('https://onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
