@@ -6,6 +6,7 @@ const dataToSend = {
 };
 
 function send(){
+    console.log('sent');
     fetch('https://indexsite.onrender.com', {
         method: 'POST',
         headers: {
