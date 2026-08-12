@@ -9,6 +9,7 @@ const port = process.env.PORT || 10000;
 app.use(express.json());
 
 app.use(cors()); 
+console.log("test);
 
 app.post('/api/data', (req, res) => {
     const receivedData = req.body;
