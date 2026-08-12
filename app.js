@@ -10,16 +10,6 @@ app.use(express.json());
 
 app.use(cors()); 
 
-app.post('/api/data', (req, res) => {
-    const receivedData = req.body;
-    console.log('Data received from client:', receivedData);
-
-    res.status(200).json({ 
-        message: 'Data received successfully!', 
-        yourData: receivedData 
-    });
-});
-
 app.post('/api/data/prescripts/1', (req, res) => {
     const receivedData = req.body;
     console.log('Data received from client:', receivedData);
