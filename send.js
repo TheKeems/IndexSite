@@ -7,7 +7,7 @@ const dataToSend = {
 
 function send(){
     console.log('sent');
-    fetch('https://indexsite.onrender.com/api/data/prescripts/1', {
+    fetch('https://indexsite.onrender.com/api/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
