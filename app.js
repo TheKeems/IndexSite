@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(cors()); 
 
-app.post('/api/data/prescripts/1', (req, res) => {
+app.post('/api/data', (req, res) => {
     const receivedData = req.body;
     console.log('Data received from client:', receivedData);
 
