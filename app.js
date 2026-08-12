@@ -20,6 +20,16 @@ app.post('/api/data', (req, res) => {
     });
 });
 
+app.post('/api/data/prescripts/1', (req, res) => {
+    const receivedData = req.body;
+    console.log('Data received from client:', receivedData);
+
+    res.status(200).json({ 
+        message: 'Data received successfully!', 
+        yourData: receivedData 
+    });
+});
+
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
