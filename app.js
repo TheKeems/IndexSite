@@ -18,8 +18,7 @@ const prescriptData = mongoose.model('SensorData', prescriptSchema);
 
 app.post('/api/data', async (req, res) => {
     const {device_id, prescript} = req.body;
-    const receivedData = req.body;
-    console.log('Data received from client:', receivedData);
+    console.log('Data received from client:', device_id);
 
     await prescriptData.findByIdAndUpdate(
         device_id, 
