@@ -1,8 +1,8 @@
 // /const { createServer } = require('node:http');
 import { connectToDatabase } from './database.js';
-const mongoose = require('mongoose');
-const express = require('express');
-const cors = require('cors');
+import mongoose from 'mongoose';
+import express from 'express';
+import cors from 'cors';
 const app = express();
 const hostname = '0.0.0.0';
 const port = process.env.PORT || 10000;
