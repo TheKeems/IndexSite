@@ -14,14 +14,14 @@ const prescriptSchema = new mongoose.Schema({
   prescript: {type: String}
 });
 
-const prescriptData = mongoose.model('SensorData', prescriptSchema);
+const SensorData = mongoose.model('SensorData', prescriptSchema);
 
 app.post('/api/data', (req, res) => {
     const {device_id, prescript} = req.body;
     const receivedData = req.body;
     console.log('Data received from client:', receivedData);
 
-    await prescriptData.findByIdAndUpdate(
+    await SensorData.findByIdAndUpdate(
         device_id, 
         {prescript}, 
         { upsert: true, new: true }
