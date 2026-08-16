@@ -16,25 +16,23 @@ const prescriptSchema = new mongoose.Schema({
 });
 
 const prescriptData = mongoose.model('SensorData', prescriptSchema);
-connectToDatabase().then(() => {
-  app.post('/api/data', async (req, res) => {
-      const {device_id, prescript} = req.body;
-      console.log('Data received from client:', device_id);
+app.post('/api/data', async (req, res) => {
+    const {device_id, prescript} = req.body;
+    console.log('Data received from client:', device_id);
   
-      await prescriptData.findByIdAndUpdate(
-          device_id, 
-          {prescript}, 
-          { upsert: true, new: true }
-      );
+    await prescriptData.findByIdAndUpdate(
+        device_id, 
+        {prescript}, 
+        { upsert: true, new: true }
+    );
     
-      res.status(200).send({ status: 'saved' });
+    res.status(200).send({ status: 'saved' });
       /*res.status(200).json({ 
           message: 'Data received successfully!', 
           yourData: receivedData 
       });*/
-  });
+});
   
-  app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-  });
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
