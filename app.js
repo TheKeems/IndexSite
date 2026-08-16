@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors()); 
 
 const prescriptSchema = new mongoose.Schema({
-  _id: {type: String, required: true},
+  device_id: {type: String, required: true},
   prescript: {type: String}
 });
 
