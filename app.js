@@ -1,5 +1,5 @@
 // /const { createServer } = require('node:http');
-import { connectToDatabase } from './db.js';
+import { connectToDatabase } from './database.js';
 const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
