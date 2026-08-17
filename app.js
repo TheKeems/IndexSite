@@ -19,7 +19,7 @@ connectToDatabase().then(() => {
       const {device_id, prescript} = req.body;
       console.log('Data received from client:', device_id);
 
-      const prescriptUser = mongoose.model('user', prescriptSchema);
+      const prescriptUser = mongoose.model(device_id, prescriptSchema);
       await prescriptUser.findByIdAndUpdate(
           device_id, 
           {prescript}, 
