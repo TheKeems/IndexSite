@@ -11,13 +11,15 @@ app.use(express.json());
 app.use(cors()); 
 
 const prescriptSchema = new mongoose.Schema({
-  device_id: {type: String, required: true},
+  _id: {type: String, required: true},
   prescript: {type: String}
 });
 connectToDatabase().then(() => {
   app.post('/api/data', async (req, res) => {
       const {device_id, prescript} = req.body;
       console.log('Data received from client:', device_id);
+
+      const prescriptUser = mongoose.model(_id, prescriptSchema);
       await prescriptData.findByIdAndUpdate(
           device_id, 
           {prescript}, 
