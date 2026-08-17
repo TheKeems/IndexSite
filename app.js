@@ -17,7 +17,7 @@ const prescriptSchema = new mongoose.Schema({
 connectToDatabase().then(() => {
   app.post('/api/data', async (req, res) => {
       const {device_id, prescript} = req.body;
-      console.log('Data received from client:', device_id);
+      console.log('Data received from client:', prescript);
 
       const prescriptUser = mongoose.model('user', prescriptSchema);
       await prescriptUser.findByIdAndUpdate(
