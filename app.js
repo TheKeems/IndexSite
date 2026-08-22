@@ -16,20 +16,11 @@ const prescriptSchema = new mongoose.Schema({
   updatedAt: {type: Date}
 });
 
-// Compiled once at module scope: mongoose.model() with the same name throws
-// OverwriteModelError on the second call, so it can't live in the handler.
 const PrescriptUser = mongoose.model('user', prescriptSchema);
 
 app.post('/api/data', async (req, res) => {
-    const {device_id, prescript} = req.body ?? {};
+    const {device_id, prescript} = req.body;
     console.log('Data received from client:', device_id, prescript);
-
-    if (typeof device_id !== 'string' || device_id.trim() === '') {
-        return res.status(400).send({ error: 'device_id is required' });
-    }
-    if (typeof prescript !== 'string') {
-        return res.status(400).send({ error: 'prescript must be a string' });
-    }
 
     try {
         const user = await PrescriptUser.findByIdAndUpdate(
